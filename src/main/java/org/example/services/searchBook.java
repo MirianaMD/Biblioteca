@@ -13,6 +13,15 @@ public class searchBook {
         book.setAuthor(result.getString("author"));
         book.setPrice(result.getInt("price"));
 
+        if(result.getInt("availability") == 1)
+            book.setAvailability("Available");
+        else
+            book.setAvailability("NOT available");
+
+        book.setStock(result.getInt("stock"));
+        book.setForRent(result.getInt("for_rent"));
+        book.setForBuy(result.getInt("for_buy"));
+
         return book;
     }
 
